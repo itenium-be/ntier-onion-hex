@@ -6,6 +6,13 @@ using N_Tier.DataAccess.Persistence;
 
 namespace N_Tier.DataAccess.Repositories.Impl;
 
+/// <summary>
+/// ATTN 2: We are abstracting a Repository implementation (DatabaseContext)
+///         with... Another Repository pattern implementation (BaseRepository)
+///
+/// We can solve any problem by introducing an extra level of indirection.
+/// ... except for the problem of too many levels of indirection.
+/// </summary>
 public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     protected readonly DatabaseContext Context;
