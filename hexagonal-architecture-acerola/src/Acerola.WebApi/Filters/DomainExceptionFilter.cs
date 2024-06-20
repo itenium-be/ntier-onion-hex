@@ -1,8 +1,7 @@
-﻿namespace Acerola.WebApi.Filters
+namespace Acerola.WebApi.Filters
 {
     using Acerola.Application;
     using Acerola.Domain;
-    using Acerola.Infrastructure;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
     using Newtonsoft.Json;
@@ -25,15 +24,6 @@
             if (applicationException != null)
             {
                 string json = JsonConvert.SerializeObject(applicationException.Message);
-
-                context.Result = new BadRequestObjectResult(json);
-                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-            }
-
-            InfrastructureException infrastructureException = context.Exception as InfrastructureException;
-            if (infrastructureException != null)
-            {
-                string json = JsonConvert.SerializeObject(infrastructureException.Message);
 
                 context.Result = new BadRequestObjectResult(json);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
