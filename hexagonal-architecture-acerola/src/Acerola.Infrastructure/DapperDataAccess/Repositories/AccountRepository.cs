@@ -1,4 +1,4 @@
-﻿namespace Acerola.Infrastructure.DapperDataAccess.Repositories
+namespace Acerola.Infrastructure.DapperDataAccess.Repositories
 {
     using Dapper;
     using Acerola.Application.Repositories;
@@ -10,6 +10,11 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Infrastructure:
+    /// IAccountReadOnlyRepository: Outgoing Port
+    /// AccountRepository: Secondary / Driven Adapter
+    /// </summary>
     public class AccountRepository : IAccountReadOnlyRepository, IAccountWriteOnlyRepository
     {
         private readonly string _connectionString;

@@ -1,33 +1,37 @@
-﻿namespace Acerola.Application.Commands.Close
+namespace Acerola.Application.Commands.CloseAccount
 {
     using System;
     using System.Threading.Tasks;
     using Acerola.Application.Repositories;
     using Acerola.Domain.Accounts;
 
+    /// <summary>
+    /// Application Layer:
+    /// ICloseAccountUseCase: Incoming Port
+    /// CloseAccountUseCase: Primary / Driving Adapter
+    /// </summary>
     public sealed class CloseAccountUseCase : ICloseAccountUseCase
     {
-        private readonly IAccountReadOnlyRepository accountReadOnlyRepository;
-        private readonly IAccountWriteOnlyRepository accountWriteOnlyRepository;
+        private readonly IAccountReadOnlyRepository _accountReadOnlyRepository;
+        private readonly IAccountWriteOnlyRepository _accountWriteOnlyRepository;
 
         public CloseAccountUseCase(
             IAccountReadOnlyRepository accountReadOnlyRepository,
             IAccountWriteOnlyRepository accountWriteOnlyRepository)
         {
-            this.accountReadOnlyRepository = accountReadOnlyRepository;
-            this.accountWriteOnlyRepository = accountWriteOnlyRepository;
+            _accountReadOnlyRepository = accountReadOnlyRepository;
+            _accountWriteOnlyRepository = accountWriteOnlyRepository;
         }
 
         public async Task<Guid> Execute(Guid accountId)
         {
-            Account account = await accountReadOnlyRepository.Get(accountId);
-			if (account == null)
+            // Account == Domain Model
+            Account account = await _accountReadOnlyRepository.Get(accountId);
+			      if (account == null)
                 throw new AccountNotFoundException($"The account {accountId} does not exists or is already closed.");
 			
             account.Close();
-
-            await accountWriteOnlyRepository.Delete(account);
-
+            await _accountWriteOnlyRepository.Delete(account);
             return account.Id;
         }
     }

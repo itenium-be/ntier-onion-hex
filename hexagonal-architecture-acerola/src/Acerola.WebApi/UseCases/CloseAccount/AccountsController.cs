@@ -1,34 +1,31 @@
-﻿namespace Acerola.WebApi.UseCases.CloseAccount
+namespace Acerola.WebApi.UseCases.CloseAccount
 {
     using Microsoft.AspNetCore.Mvc;
     using System;
     using System.Threading.Tasks;
-    using Acerola.Application.Commands.Close;
+    using Acerola.Application.Commands.CloseAccount;
 
+    /// <summary>
+    /// User Interface
+    /// </summary>
     [Route("api/[controller]")]
     public sealed class AccountsController : Controller
     {
-        private readonly ICloseAccountUseCase closeService;
+        private readonly ICloseAccountUseCase _closeService;
 
-        public AccountsController(
-            ICloseAccountUseCase closeService)
+        public AccountsController(ICloseAccountUseCase closeService)
         {
-            this.closeService = closeService;
+            _closeService = closeService;
         }
 
-        /// <summary>
-        /// Close an account
-        /// </summary>
         [HttpDelete("{accountId}")]
         public async Task<IActionResult> Close(Guid accountId)
         {
-            Guid closeResult = await closeService.Execute(accountId);
-
+            Guid closeResult = await _closeService.Execute(accountId);
             if (closeResult == Guid.Empty)
             {
                 return new NoContentResult();
             }
-
             return Ok();
         }
     }

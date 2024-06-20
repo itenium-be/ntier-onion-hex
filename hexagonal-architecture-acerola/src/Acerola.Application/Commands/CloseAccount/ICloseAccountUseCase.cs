@@ -1,4 +1,4 @@
-﻿namespace Acerola.Application.Commands.Close
+namespace Acerola.Application.Commands.CloseAccount
 {
     using System;
     using System.Threading.Tasks;
