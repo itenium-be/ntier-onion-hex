@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Acerola.Application\Acerola.Application.csproj" />
-    <ProjectReference Include="..\Acerola.Domain\Acerola.Domain.csproj" />
   </ItemGroup>
   
 </Project>
