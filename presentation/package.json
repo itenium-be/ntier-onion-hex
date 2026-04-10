@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2024-06-20-NTier-Hex-Onion/",
+    "export": "slidev export --format pptx --output ../2024-06-20-NTier-Hex-Onion.pptx --with-clicks=false"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.0.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.49.1"
+  }
+}

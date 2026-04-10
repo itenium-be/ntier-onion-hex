@@ -1,2 +1,9 @@
 ~$*.pptx
+.~lock.n-tier-onion-hex.pptx#
 node_modules
+
+# Slidev
+presentation/node_modules/
+presentation/dist/
+presentation/.slidev/
+presentation/migration/
