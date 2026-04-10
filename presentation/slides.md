@@ -36,10 +36,6 @@ layout: section
 
 ---
 layout: statement
-h1:
-  type: braces
-  color: primary
-  position: all
 ---
 
 # Good architecture makes it easy to do the right thing and hard to do the wrong thing
@@ -48,24 +44,28 @@ h1:
 
 ![](./images/kickoff-soccer.jpg)
 
-<!-- https://github.com/itenium-be/Architecture-KickOff
-
-Where we talked about becoming an Architect and what Architecture is. -->
+<!--
+https://github.com/itenium-be/Architecture-KickOff  
+Where we talked about becoming an Architect and what Architecture is.
+-->
 
 ---
-layout: statement
+layout: default-aside
 ---
 
 # Make sure you have the right abstractions
 ## … I mean… Architecture!
 
+![](./images/fowler-cruft.png)
+
 ::image::
 
 ![](./images/abstractions.jpg)
 
-<!-- Martin Fowler:
-
-https://martinfowler.com/bliki/PresentationDomainDataLayering.html -->
+<!--
+Martin Fowler:  
+https://martinfowler.com/bliki/PresentationDomainDataLayering.html
+-->
 
 ---
 layout: section
@@ -85,6 +85,8 @@ h1:
 
 High-level modules should not depend on low-level modules. Both should depend on abstractions.
 
+<div v-click class="flex gap-4 items-end">
+
 ```js
 // A high level component
 class SaveButton {
@@ -96,6 +98,10 @@ class SaveButton {
 }
 ```
 
+<img src="./images/coding-horror.png" class="mb-6" />
+
+</div>
+
 ::image::
 
 ![](./images/di-skull-pc.jpg)
@@ -106,7 +112,7 @@ class SaveButton {
 layout: default-aside
 h1:
   type: hash
-  color: white
+  color: muted
   position: start
 ---
 
@@ -139,6 +145,8 @@ layout: default-aside
 # Dependency Inversion
 
 The high level module and the low-level implementation depend on an abstraction
+
+![](./images/di-dependency-flow.png)
 
 <v-clicks>
 
