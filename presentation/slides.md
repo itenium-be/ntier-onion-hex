@@ -321,11 +321,30 @@ image: ./images/ntier-source-tree.jpg
 
 ::content::
 
+
+📂 **Code Show**:
+<br>nuyonu/N-Tier-Architecture
+
+<br>
+
 Maybe it's not **that** easy?
+<br>… I hate the implementation 😊
 
-… I hate the implementation 😊
+<!--
+ATTN: The app needs to be updated (.NET7, AutoMapper, Swagger, ...)
 
-<!-- https://github.com/nuyonu/N-Tier-Architecture -->
+**CODE SHOW**:
+- Directory: N-Tier-Architecture
+- Show ATTN 1, ATTN 2, ATTN 3
+
+It's doing a lot of things that I don't like:
+- Validation (400) with english error messages baked in (translations much?)
+- All entities inherit a base class (for Id)
+- CreatedBy/On etc: not using ValueObjects
+
+Original source:  
+https://github.com/nuyonu/N-Tier-Architecture
+-->
 
 ---
 layout: break
