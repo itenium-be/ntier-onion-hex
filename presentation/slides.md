@@ -36,6 +36,7 @@ layout: section
 
 ---
 layout: statement
+textSize: sm
 ---
 
 # Good architecture makes it easy to do the right thing and hard to do the wrong thing
@@ -341,6 +342,7 @@ Maybe it's not **that** easy?
 
 ---
 layout: break
+orientation: vertical
 ---
 
 # ☕ Break
@@ -370,7 +372,7 @@ size: sm
 
 # Ports and Adapters
 
-<v-clicks>
+<v-clicks depth="2">
 
 - Domain-Centered Architecture
   - Dependency flow towards the center
@@ -440,15 +442,14 @@ image: ./images/hex-1-flow.jpg
 
 # Hexagonal
 
-<!-- **Left**: our users: they use the user interface(s)
-
-Flow of control goes inside the Application Core
-
+<!--
+**Left**: our users: they use the user interface(s)  
+Flow of control goes inside the Application Core  
 Application Core: is what makes the magic happen
 
-**Right**: The infrastructure
-
-Our databases, 3rd party APIs -->
+**Right**: The infrastructure  
+Our databases, 3rd party APIs
+-->
 
 ---
 layout: two-col-image-text
@@ -457,9 +458,10 @@ image: ./images/hex-2-adapters.jpg
 
 # Hexagonal
 
-<!-- **Left**: user TELL our application to do something (Primary / Driving Adapters)
-
-**Right**: our application TELLS the database to do something (Secondary / Driven Adapters) -->
+<!--
+**Left**: user TELL our application to do something (Primary / Driving Adapters)  
+**Right**: our application TELLS the database to do something (Secondary / Driven Adapters)
+-->
 
 ---
 layout: two-col-image-text
@@ -468,11 +470,11 @@ image: ./images/hex-3-driving.jpg
 
 # Hexagonal
 
-<!-- **Left: Primary Adapters**
-
-The Application Core defines Ports == Interfaces (and maybe DTOs) – Services, Repositories, …
-
-Which are implemented OUTSIDE the Application Core (ex: Controllers) -->
+<!--
+**Left: Primary Adapters**  
+The Application Core defines Ports == Interfaces (and maybe DTOs) – Services, Repositories, …  
+Which are implemented OUTSIDE the Application Core (ex: Controllers)
+-->
 
 ---
 layout: two-col-image-text
@@ -481,9 +483,10 @@ image: ./images/hex-4-driven.jpg
 
 # Hexagonal
 
-<!-- **Right: Secondary Adapters**
-
-Adapters to send SMS, Emails, Storage, Payment, … -->
+<!--
+**Right: Secondary Adapters**  
+Adapters to send SMS, Emails, Storage, Payment, …
+-->
 
 ---
 layout: two-col-image-text
@@ -492,11 +495,11 @@ image: ./images/hex-5-ports.jpg
 
 # Hexagonal
 
-<!-- **Dependency Inversion**
-
-The Application Core defines the Ports / Interfaces
-
-User Interface and Infrastructure Layer implements the interfaces -->
+<!--
+**Dependency Inversion**  
+The Application Core defines the Ports / Interfaces  
+User Interface and Infrastructure Layer implements the interfaces
+-->
 
 ---
 layout: two-col-image-text
@@ -505,25 +508,20 @@ image: ./images/hex-6-app-layer.jpg
 
 # Hexagonal
 
-<!-- **Application Layer**
-
-Application Interfaces/Services (UseCases, Business Processes)
-
+<!--
+**Application Layer**  
+Application Interfaces/Services (UseCases, Business Processes)  
 ORM Interfaces
-
-Repository Calls
-
-Perform Business Logic
+- Repository Calls
+- Perform Business Logic
 
 Command/Query Handlers  Implement Logic or Call a Service
 
 Trigger Application Events, which trigger UseCase Side Effects
-
-Emailing
-
-Push Notifications
-
-Start another UseCase -->
+- Emailing
+- Push Notifications
+- Start another UseCase
+-->
 
 ---
 layout: two-col-image-text
@@ -532,24 +530,20 @@ image: ./images/hex-7-domain.jpg
 
 # Hexagonal
 
-<!-- **Domain Layer:**
-
-**Domain Services:** (optional)
-
-Logic that spans multiple Domain Models
-
+<!--
+**Domain Layer:**  
+**Domain Services:** (optional)  
+Logic that spans multiple Domain Models  
 That can be used my multiple Application Services
 
-**Domain Models**:
-
-Data & Logic
-
-Entities, Value Objects, Enums
-
-Maybe Domain Events (Maybe for Event Sourcing) -->
+**Domain Models**:  
+Data & Logic  
+Entities, Value Objects, Enums  
+Maybe Domain Events (Maybe for Event Sourcing)
+-->
 
 ---
-layout: default
+layout: quote
 h1:
   type: braces
   color: primary
@@ -558,7 +552,7 @@ h1:
 
 # Hexagonal Architecture
 
-Hexagonal-Architecture-Acerola
+## Hexagonal-Architecture-Acerola
 
 <!-- https://github.com/ivanpaulovich/hexagonal-architecture-acerola -->
 
@@ -580,17 +574,29 @@ h1:
 
 It's pretty much exactly the same
 
+<div class="flex items-center justify-center gap-6 mt-8">
+  <div class="text-center">
+    <img src="./images/onion-diagram.jpg" class="h-52" />
+    <div class="mt-2 text-lg font-bold">Onion</div>
+  </div>
+  <span class="text-5xl">→</span>
+  <div class="text-center">
+    <img src="./images/hex-diagram.jpg" class="h-52" />
+    <div class="mt-2 text-lg font-bold">Hexagonal</div>
+  </div>
+</div>
+
 ::image::
 
 ![](./images/onion-house.jpg)
 
-<!-- **It's all the same**
-
+<!--
+**It's all the same**  
 https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/
 
-**Onion**:
-
-Emphasizes on strict layering with dependencies pointing inward -->
+**Onion**:  
+Emphasizes on strict layering with dependencies pointing inward
+-->
 
 ---
 layout: statement
@@ -603,11 +609,11 @@ layout: statement
 
 ![](./images/it-depends-eyes.jpg)
 
-<!-- Personal Preference
-
-The Team
-
-The Project -->
+<!--
+- Personal Preference
+- The Team
+- The Project
+-->
 
 ---
 layout: quote-image
