@@ -681,6 +681,30 @@ Not worth a deep dive here, but the audience should know it exists.
 -->
 
 ---
+layout: default
+size: sm
+h1:
+  type: slashes
+  color: primary
+  position: end
+---
+
+# N-Tier vs Hexagonal / Onion
+
+| | **N-Tier** | **Hexagonal / Onion** |
+|---|---|---|
+| Dependency flow | Top → Down | Outside → In |
+| Domain layer | Middle (depends on DB) | Center (no dependencies) |
+| Infrastructure | Bottom (foundation) | Outermost (pluggable) |
+| Testability | Seams at layer boundaries | Core testable in isolation |
+| Learning curve | Low | Medium–High |
+| Best fit | Small–medium apps, MVPs | Complex domains, long-lived systems |
+
+<!-- This is the slide the audience will photograph.
+
+N-Tier is also fine for individual microservices where the domain is small. -->
+
+---
 layout: statement
 ---
 
