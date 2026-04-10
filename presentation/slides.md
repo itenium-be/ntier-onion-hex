@@ -156,7 +156,7 @@ The high level module and the low-level implementation depend on an abstraction
   <div class="border-2 px-10 py-4 text-center">IStorage<br><span class="op-60">save()</span></div>
   <div class="flex flex-col items-center gap-1">
     <span class="text-blue-400 text-4xl">←</span>
-    <span class="text-red-400 text-4xl">←</span>
+    <span class="text-red-400 text-4xl">→</span>
   </div>
   <div class="border-2 px-10 py-4 text-center">FileStorage<br><span class="op-60">save()</span></div>
 </div>
