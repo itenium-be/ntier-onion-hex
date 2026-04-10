@@ -313,19 +313,6 @@ What about cross cutting concerns?
 
 ---
 layout: two-col-image-text
-image: ./images/tier-angular-cross.jpg
----
-
-# Multitier
-
-::content::
-
-Desktop Apps are so 1990! 😢
-
-<!-- **Controllers**: WebApi or Spring -->
-
----
-layout: two-col-image-text
 image: ./images/ntier-source-tree.jpg
 ---
 
