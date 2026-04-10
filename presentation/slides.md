@@ -6,7 +6,7 @@ transition: fade
 session-time: 60min
 track: Architecture
 type: Theoretical
-first: 2024-06-20
+date: 2024-06-20
 ---
 
 # n-tier
