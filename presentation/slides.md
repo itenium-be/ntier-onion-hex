@@ -266,7 +266,7 @@ size: sm
 - Good starting point for larger applications
   - When the domain, scope or architectural requirements are not yet (fully) known
 - Easy to migrate from
-- But… NOT a good top tier architecture
+- But… NOT a good top tier architecture for large applications
 
 </v-clicks>
 
