@@ -175,14 +175,10 @@ h1:
   type: brackets
   color: primary
   position: all
-h2:
-  type: semicolon
-  color: muted
-  position: end
 ---
 
 # Dependency Inversion
-## Architecture is all about managing complexity dependencies
+## Architecture is all about managing ~~complexity~~ dependencies
 
 <v-clicks>
 
@@ -212,7 +208,7 @@ layout: section
 Multitier Architecture
 
 ---
-layout: default-aside
+layout: default
 h1:
   type: slashes
   color: primary
@@ -221,6 +217,8 @@ h1:
 
 # 3-Tier
 ## a timeless classic
+
+<img src="./images/3tier-pdd.jpg" class="absolute right-8 top-1/2 -translate-y-1/2 h-80" />
 
 <v-clicks>
 
@@ -236,19 +234,17 @@ h1:
 
 </v-clicks>
 
-::image::
-
-![](./images/3tier-pdd.jpg)
-
-<!-- **UI hard to test:**
+<!--
+**UI hard to test:**
 Minimize logic there and put it all in the BL.
 Or use an MVC, MVVP style of design in the presentation layer.
 
 **Multi layered tier:**
 The Domain Tier could contain
-Validation Layer
-Processing Layer
-Mapping Layer -->
+- Validation Layer
+- Processing Layer
+- Mapping Layer
+-->
 
 ---
 layout: default
@@ -282,7 +278,7 @@ size: sm
 
 # Multitier
 
-<v-clicks>
+<v-clicks depth="2">
 
 - Not a good fit for top level architecture of larger applications?
   - MicroServices: What architecture are you using for each micro service?
@@ -308,10 +304,9 @@ h1:
 ---
 
 # Multitier
+## Limit which layers talk to each other
 
 ::content::
-
-Limit which layers talk to each other
 
 What about cross cutting concerns?
 
@@ -331,10 +326,6 @@ Desktop Apps are so 1990! 😢
 ---
 layout: two-col-image-text
 image: ./images/ntier-source-tree.jpg
-h1:
-  type: brackets
-  color: white
-  position: 2-3
 ---
 
 # Multitier
@@ -342,9 +333,9 @@ h1:
 
 ::content::
 
-Maybe it's not that easy?
+Maybe it's not **that** easy?
 
-… I hate the implementation… 😊
+… I hate the implementation 😊
 
 <!-- https://github.com/nuyonu/N-Tier-Architecture -->
 
@@ -356,7 +347,7 @@ layout: break
 
 ::timer::
 
-<Timer minutes="10" />
+<Timer minutes="5" />
 
 ::image::
 
