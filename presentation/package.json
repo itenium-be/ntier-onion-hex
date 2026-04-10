@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /NTier-Hex-Onion/",
-    "export": "slidev export --format pptx --output ../n-tier-onion-hex.pptx --with-clicks=false"
+    "build": "slidev build --base /ntier-onion-hex/",
+    "export": "slidev export --format pptx --output ../ntier-onion-hex.pptx --with-clicks=false"
   },
   "dependencies": {
     "@slidev/cli": "^51.0.0"
