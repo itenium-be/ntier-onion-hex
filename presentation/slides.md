@@ -691,6 +691,8 @@ h1:
 
 # N-Tier vs Hexagonal / Onion
 
+<div class="dense">
+
 | | **N-Tier** | **Hexagonal / Onion** |
 |---|---|---|
 | Dependency flow | Top → Down | Outside → In |
@@ -700,9 +702,11 @@ h1:
 | Learning curve | Low | Medium–High |
 | Best fit | Small–medium apps, MVPs | Complex domains, long-lived systems |
 
-<!-- This is the slide the audience will photograph.
+</div>
 
-N-Tier is also fine for individual microservices where the domain is small. -->
+<!--
+N-Tier is also fine for individual microservices where the domain is small.
+-->
 
 ---
 layout: statement
