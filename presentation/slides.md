@@ -431,7 +431,7 @@ layout: statement
 ---
 
 # Hexagonal Architecture
-## A metaphor for Ports-and-Adapters
+## aka Ports-and-Adapters
 
 ::image::
 
@@ -558,9 +558,20 @@ h1:
 
 # Hexagonal Architecture
 
-## Hexagonal-Architecture-Acerola
+📂 **Code Show**:
+<br>ivanpaulovich/hexagonal-architecture-acerola
 
-<!-- https://github.com/ivanpaulovich/hexagonal-architecture-acerola -->
+<!--
+ATTN: This needs replacement. 8 years since last update.  
+Maybe check the Clean Architecture with ASP.NET Core 10 from Ardalis?
+(Youtube: .NET Conf 2025)
+
+Also note that there are changes in the codebase there (separate git repo)  
+To point out what is incoming/outgoing etc.
+
+**CODE SHOW**:  
+https://github.com/ivanpaulovich/hexagonal-architecture-acerola
+-->
 
 ---
 layout: section
@@ -577,31 +588,96 @@ h1:
 ---
 
 # Onion Architecture
+## The Layers
 
-It's pretty much exactly the same
+<img src="./images/onion-diagram.jpg" class="mx-auto h-72 -mt-13" />
 
-<div class="flex items-center justify-center gap-6 mt-8">
-  <div class="text-center">
-    <img src="./images/onion-diagram.jpg" class="h-52" />
-    <div class="mt-2 text-lg font-bold">Onion</div>
-  </div>
-  <span class="text-5xl">→</span>
-  <div class="text-center">
-    <img src="./images/hex-diagram.jpg" class="h-52" />
-    <div class="mt-2 text-lg font-bold">Hexagonal</div>
-  </div>
-</div>
+<v-clicks>
+
+- **Domain Model** — Entities, Value Objects, Domain Events
+- **Domain Services** — logic spanning multiple models
+- **Application Services** — use cases, orchestration
+- **Infrastructure** — DB, UI, APIs, Messaging — all outermost
+
+</v-clicks>
 
 ::image::
 
 ![](./images/onion-house.jpg)
 
 <!--
-**It's all the same**  
+Jeffrey Palermo, 2008.  
+Reacting to traditional N-Tier where everything depended on the data layer.
+-->
+
+---
+layout: default-aside
+h1:
+  type: hash
+  color: primary
+  position: start
+---
+
+# Onion Architecture
+## What's different from Hexagonal?
+
+<v-clicks>
+
+- **Strict layer rule**: depend only on the layer directly inward
+  - Hexagonal doesn't prescribe internal structure
+- **Named, prescribed layers** vs flexible ports/adapters
+- **Infrastructure is explicitly outermost**
+  - DB, UI, external APIs — all in the same ring
+- Palermo was reacting to N-Tier
+  - Flip the dependency arrows: nothing depends on infrastructure
+
+</v-clicks>
+
+<!--
+Hexagonal says "inside vs outside" with ports at the boundary.  
+Onion says "here are the exact concentric rings and their rules."
+-->
+
+---
+layout: default-aside
+h1:
+  type: dot
+  color: muted
+  position: end
+---
+
+# Onion Architecture
+## It's all the same… almost
+
+<div class="flex items-center justify-center gap-6 mt-8">
+  <div class="text-center">
+    <img src="./images/onion-diagram.jpg" class="h-44" />
+    <div class="mt-2 text-lg font-bold">Onion</div>
+  </div>
+  <span class="text-5xl">≈</span>
+  <div class="text-center">
+    <img src="./images/hex-diagram.jpg" class="h-44" />
+    <div class="mt-2 text-lg font-bold">Hexagonal</div>
+  </div>
+</div>
+
+<v-click>
+
+> _"Layers, Onions, Ports, Adapters: it's all the same"_ — Mark Seemann
+
+</v-click>
+
+<v-click>
+
+Same family: add **Clean Architecture** (Robert C. Martin) to the list
+
+</v-click>
+
+<!--
 https://blog.ploeh.dk/2013/12/03/layers-onions-ports-adapters-its-all-the-same/
 
-**Onion**:  
-Emphasizes on strict layering with dependencies pointing inward
+Clean Architecture = Uncle Bob's take. Same dependency rule, different layer names.
+Not worth a deep dive here, but the audience should know it exists.
 -->
 
 ---
