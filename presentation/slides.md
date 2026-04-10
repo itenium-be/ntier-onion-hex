@@ -150,20 +150,20 @@ The high level module and the low-level implementation depend on an abstraction
 <div class="flex items-center gap-3 text-lg my-10">
   <div class="border-2 px-10 py-4 text-center">SaveButton<br><span class="op-60">click()</span></div>
   <div class="flex flex-col items-center gap-1">
-    <span class="text-blue-400 text-4xl">→</span>
     <span class="text-red-400 text-4xl">→</span>
+    <v-click at="1"><span class="text-blue-400 text-4xl">→</span></v-click>
   </div>
   <div class="border-2 px-10 py-4 text-center">IStorage<br><span class="op-60">save()</span></div>
   <div class="flex flex-col items-center gap-1">
-    <span class="text-blue-400 text-4xl">←</span>
     <span class="text-red-400 text-4xl">→</span>
+    <v-click at="1"><span class="text-blue-400 text-4xl">←</span></v-click>
   </div>
   <div class="border-2 px-10 py-4 text-center">FileStorage<br><span class="op-60">save()</span></div>
 </div>
 
-<v-click><span class="text-blue-400 text-5xl">→</span> Dependency Flow</v-click>
+<span class="text-red-400 text-5xl">→</span> Control Flow
 <br>
-<v-click><span class="text-red-400 text-5xl">→</span> Control Flow</v-click>
+<v-click at="1"><span class="text-blue-400 text-5xl">→</span> Dependency Flow</v-click>
 
 
 ::image::
