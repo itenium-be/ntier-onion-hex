@@ -146,14 +146,24 @@ layout: default-aside
 
 The high level module and the low-level implementation depend on an abstraction
 
-![](./images/di-dependency-flow.png)
+<div class="flex items-center gap-3 text-lg my-10">
+  <div class="border-2 px-10 py-4 text-center">SaveButton<br><span class="op-60">click()</span></div>
+  <div class="flex flex-col items-center gap-1">
+    <span class="text-blue-400 text-4xl">→</span>
+    <span class="text-red-400 text-4xl">→</span>
+  </div>
+  <div class="border-2 px-10 py-4 text-center">IStorage<br><span class="op-60">save()</span></div>
+  <div class="flex flex-col items-center gap-1">
+    <span class="text-blue-400 text-4xl">←</span>
+    <span class="text-red-400 text-4xl">←</span>
+  </div>
+  <div class="border-2 px-10 py-4 text-center">FileStorage<br><span class="op-60">save()</span></div>
+</div>
 
-<v-clicks>
+<v-click><span class="text-blue-400 text-5xl">→</span> Dependency Flow</v-click>
+<br>
+<v-click><span class="text-red-400 text-5xl">→</span> Control Flow</v-click>
 
-- Dependency Flow
-- Control Flow
-
-</v-clicks>
 
 ::image::
 
@@ -164,7 +174,7 @@ layout: default-aside
 h1:
   type: brackets
   color: primary
-  position: 2
+  position: all
 h2:
   type: semicolon
   color: muted
