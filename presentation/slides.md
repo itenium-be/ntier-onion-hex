@@ -1,7 +1,7 @@
 ---
 theme: ./theme
-title: NTier-Hex-Onion
-subTitle: n-tier · hexagonal · onion
+title: Layered Architectures
+subTitle: From N-Tier to Hexagonal & Onion
 transition: fade
 session-time: 60min
 track: Architecture
