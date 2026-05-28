@@ -8,6 +8,7 @@ track: Architecture
 type: Theoretical
 first: 2024-06-20
 lastUpdate: 2024-06-20
+aspectRatio: 16/10
 ---
 
 # n-tier
